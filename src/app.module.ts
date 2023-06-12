@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
 import { UsersModule } from './users/users.module';
+import { PhotosModule } from './photos/photos.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { validate, EnvironmentVariables } from './env.validate';
@@ -27,6 +28,7 @@ import { validate, EnvironmentVariables } from './env.validate';
       inject: [ConfigService],
     }),
     UsersModule,
+    PhotosModule,
   ],
   controllers: [AppController],
   providers: [AppService],

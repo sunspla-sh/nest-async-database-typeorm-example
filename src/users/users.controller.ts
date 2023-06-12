@@ -21,6 +21,11 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
+  @Get('photos')
+  findAllWithPhotos(): Promise<User[]> {
+    return this.usersService.findAllWithPhotos();
+  }
+
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number): Promise<User | null> {
     return this.usersService.findOne(id);
@@ -29,6 +34,11 @@ export class UsersController {
   @Post()
   create(@Body() createUserDto: CreateUserDto): Promise<User> {
     return this.usersService.create(createUserDto);
+  }
+
+  @Post('photos')
+  createWithPhotos(@Body() createUserDto: CreateUserDto): Promise<User> {
+    return this.usersService.createWithPhotos(createUserDto);
   }
 
   @Post('many')
