@@ -7,6 +7,7 @@ import { PhotosModule } from './photos/photos.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { validate, EnvironmentVariables } from './env.validate';
+import { CatsModule } from './cats/cats.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { validate, EnvironmentVariables } from './env.validate';
     }),
     UsersModule,
     PhotosModule,
+    CatsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
